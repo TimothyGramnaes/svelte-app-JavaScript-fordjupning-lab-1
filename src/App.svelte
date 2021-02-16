@@ -10,18 +10,21 @@
   };
 </script>
 
+<!-- Style width {navWidth}% är Svelte-syntax. nu är navWidth sparat som en variabel -->
+
 <div id="mySidenav" class="sidenav" style="width: {navWidth}%">
+  <!-- on:click={closeNav} är svelte-syntax för att köra 
+	funktionen closeNav vid klick av x-symbolen(&times;) -->
   <a href="#closer" class="closebtn" on:click={closeNav}>&times;</a>
-  <a href="#1">About</a>
-  <a href="#2">Services</a>
-  <a href="#3">Clients</a>
+  <a href="#1">Bajs</a>
+  <a href="#2">Kiss</a>
+  <a href="#3">Snor</a>
   <a href="#4">Contact</a>
 </div>
 
-<!-- Use any element to open the sidenav -->
+<!-- on:click={openNav} är Svelte-syntax för att öppna side-naven -->
 <span on:click={openNav}>open</span>
 
-<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
 <div id="main">
   <h1>Hej och välkommen till min jättetuffa hemsida</h1>
 </div>
@@ -33,15 +36,15 @@
     right: 10rem;
   }
   .sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 40%; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
+    height: 100%;
+    width: 40%;
+    position: fixed;
+    z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 60px;
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
   }
 
