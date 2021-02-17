@@ -1,8 +1,35 @@
 <script>
+  import Contact from "./Contact.svelte";
+  import Products from "./Products.svelte";
+
+  let contactUs = true;
+
+  let openMenu = true;
+
+  let productManage = false;
+
+  let hamburgerBtn = "Open menu";
+
+  function contactPage() {
+    contactUs = false;
+  }
+
+  function productPage() {
+    productManage = true;
+  }
+
   let navWidth = 0;
 
   const openNav = () => {
-    navWidth = 40;
+    if (openMenu == false) {
+      navWidth = 40;
+      openMenu = true;
+      hamburgerBtn = "Close menu";
+    } else if (openMenu == true) {
+      navWidth = 0;
+      openMenu = false;
+      hamburgerBtn = "Open menu";
+    }
   };
 
   const closeNav = () => {
@@ -16,24 +43,38 @@
   <!-- on:click={closeNav} är svelte-syntax för att köra 
 	funktionen closeNav vid klick av x-symbolen(&times;) -->
   <a href="#closer" class="closebtn" on:click={closeNav}>&times;</a>
-  <a href="#1">Bajs</a>
-  <a href="#2">Kiss</a>
-  <a href="#3">Snor</a>
-  <a href="#4">Contact</a>
+  <a href="#1" on:click={contactPage}>Contact</a>
+  <a href="#2" on:click={productPage}>Products</a>
+  <a href="#3">Shop</a>
+  <a href="#4">Home</a>
 </div>
 
 <!-- on:click={openNav} är Svelte-syntax för att öppna side-naven -->
-<span on:click={openNav}>open</span>
+<span class="menu-btn" on:click={openNav}>{hamburgerBtn}</span>
 
-<div id="main">
-  <h1>Hej och välkommen till min jättetuffa hemsida</h1>
-</div>
+{#if contactUs == true}
+  <div id="main">
+    <h1>Hello Stranger!</h1>
+  </div>
+{/if}
+
+{#if contactUs == false}
+  <Contact />
+{/if}
+
+{#if productManage == true}
+  <Products />
+{/if}
 
 <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
 <style>
-  span {
+  .menu-btn {
     position: absolute;
-    right: 10rem;
+    right: 5rem;
+  }
+
+  .menu-btn:hover {
+    cursor: pointer;
   }
   .sidenav {
     height: 100%;
