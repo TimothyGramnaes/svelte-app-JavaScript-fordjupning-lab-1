@@ -3,7 +3,6 @@
   import Products from "./Products.svelte";
 
   let contactUs = true;
-
   let openMenu = true;
 
   let productManage = false;
@@ -14,12 +13,15 @@
     contactUs = false;
   }
 
+  // Visar productsidan
   function productPage() {
     productManage = true;
   }
 
+  // Har sidebaren helt gömmd till höger
   let navWidth = 0;
 
+  // Öppnar sidebaren, ändrar namnet på "open menu"
   const openNav = () => {
     if (openMenu == false) {
       navWidth = 40;
