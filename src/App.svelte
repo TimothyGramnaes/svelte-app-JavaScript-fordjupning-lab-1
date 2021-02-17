@@ -4,18 +4,19 @@
 
   let contactUs = true;
   let openMenu = true;
-
   let productManage = false;
-
   let hamburgerBtn = "Open menu";
 
+  // Visar contact-sidan
   function contactPage() {
     contactUs = false;
+    productManage = false;
   }
 
   // Visar productsidan
   function productPage() {
     productManage = true;
+    contactUs = true;
   }
 
   // Har sidebaren helt gömmd till höger
