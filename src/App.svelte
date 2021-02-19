@@ -48,7 +48,7 @@
   <a href="#closer" class="closebtn" on:click={closeNav}>&times;</a>
   <a href="#1" on:click={contactPage}>Contact</a>
   <a href="#2" on:click={productPage}>Products</a>
-  <a href="#3">Shop</a>
+  <a href="#3">Shopp</a>
   <a href="#4">Home</a>
 </div>
 
