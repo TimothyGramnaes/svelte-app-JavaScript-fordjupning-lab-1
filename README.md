@@ -1,5 +1,5 @@
-_Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)_
-
+School-assignment comparing React to other frameworks. 
+This is a svelte-page showing a sliding navbar and some basic pages
 ---
 
 Har använt mig av slide-menyn från w3schools: https://www.w3schools.com/howto/howto_js_off-canvas.asp
